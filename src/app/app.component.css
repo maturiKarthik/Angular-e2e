@@ -1,0 +1,89 @@
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-fix {
+  flex: 2;
+}
+
+.flex-cnt {
+  flex: 23;
+  overflow-x: hidden;
+}
+
+
+
+
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-fix {
+    flex: 1;
+
+  }
+
+  .flex-cnt {
+    flex: 23;
+
+  }
+
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-fix {
+    flex: 1;
+
+  }
+
+  .flex-cnt {
+    flex: 23;
+
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1300px) {
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-fix {
+    flex: 1;
+
+  }
+
+  .flex-cnt {
+    flex: 23;
+
+  }
+
+}

@@ -1,0 +1,87 @@
+<section data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+  <div class="container">
+    <div class="row m-5 pt-4">
+      <div class="col-sm-12">
+        <h1 id="title">Blog</h1>
+        <br />
+        <p id="sub-title">
+          WE SHARE OUR 2 CENTS ABOUT TECHNICAL DIGITAL MARKETING, GROWTH HACKING,<br /> DESIGN, AND
+          BUSINESS
+        </p>
+        <br />
+        <div class="mdc-chip-set mdc-chip-set--choice" role="grid">
+          <div class="mdc-chip mdc-chip--selected" role="row">
+            <div class="mdc-chip__ripple"></div>
+            <span role="gridcell">
+              <span role="radio" tabindex="0" aria-checked="true" class="mdc-chip__primary-action">
+                <span class="mdc-chip__text">Prefecture</span>
+              </span>
+            </span>
+          </div>
+          <div class="mdc-chip mdc-chip--selected" role="row">
+            <div class="mdc-chip__ripple"></div>
+            <span role="gridcell">
+              <span role="radio" tabindex="0" aria-checked="true" class="mdc-chip__primary-action">
+                <span class="mdc-chip__text">Jobs</span>
+              </span>
+            </span>
+          </div>
+          <div class="mdc-chip mdc-chip--selected" role="row">
+            <div class="mdc-chip__ripple"></div>
+            <span role="gridcell">
+              <span role="radio" tabindex="0" aria-checked="true" class="mdc-chip__primary-action">
+                <span class="mdc-chip__text">accomodation</span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+
+  <div class="container">
+    <!-- List Of blogs-->
+    <div class="row m-5 pt-4">
+      <div class="col-sm order-2 order-lg-1">
+        <div *ngFor="let item of list">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="{{item.img}}" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 id="list_title">{{item.title}}</h5>
+                  <p id="list_sub_title">{{item.subtitle}}</p>
+                  <p id="date"><small class="text-muted">{{item.date}}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- List of Popular -->
+      <div class="col-sm  ml-5 pl-5 order-1 order-lg-2" style="text-align: center;" data-aos="fade-left" data-aos-anchor="#example-anchor"
+        data-aos-easing="linear" data-aos-duration="1500">
+        <h3 id="popular-title"><u>Popular Post's</u></h3>
+        <br />
+        <ul *ngFor="let item of list">
+          <li class="popular-list" *ngIf="item.tag == 'popular'">
+            <div>
+              <img src={{item.img}} width="90px" height="90px" alt="sun.png" />
+            </div>
+            <div style=" height:90px;">
+              <p id="pl_title">{{item.title}}</p>
+              <sub id="date">{{item.date}}</sub>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

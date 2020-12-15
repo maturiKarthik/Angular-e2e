@@ -1,0 +1,42 @@
+<div class="side-nav">
+  <div class="menu-ic" (click)="toggleMenu(true)">
+    <img src="https://img.icons8.com/android/24/000000/menu.png" alt="menu">
+  </div>
+  <div class="tag">
+    <p>-- we make your stay Loveable.</p>
+    <div>
+      &#9992;
+    </div>
+  </div>
+  <div class="media-share">
+    <div class="md-1"><a href="#" class="fa fa-facebook"></a></div>
+    <div class="md-1"><a href="#" class="fa fa-twitter"></a></div>
+    <div class="md-1"><a href="#" class="fa fa-google"></a></div>
+    <div class="md-1"><a href="#" class="fa fa-youtube"></a></div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="big-menu" *ngIf="bigMenuStatus === true">
+  <div class="close" (click)="toggleMenu(false)">
+    <div class="fa fa-close"></div>
+  </div>
+  <div class="cnt">
+    <div (click)="navigate('',false)">. Home</div>
+    <div (click)="navigate('/blogs',false)">. Blogs</div>
+    <div (click)="navigate('/service',false)">. Our Services</div>
+    <div (click)="navigate('/market',false)">. Market Place</div>
+    <div (click)="navigate('/about',false)">. About Us</div>
+    <div>Contact Us</div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="tag">© CopyRight 2020 Created with ♥ in meghaSolution</div>
+  </div>
+</div>
