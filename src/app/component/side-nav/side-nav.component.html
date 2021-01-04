@@ -1,26 +1,41 @@
-<div class="side-nav">
-  <div class="menu-ic" (click)="toggleMenu(true)">
-    <img src="https://img.icons8.com/android/24/000000/menu.png" alt="menu">
-  </div>
-  <div class="tag">
-    <p>-- we make your stay Loveable.</p>
-    <div>
-      &#9992;
+<section>
+  <div class="row nav-bg">
+    <div class="col-md-12 d-flex justify-content-between">
+      <h1>
+        <span class="eu">Eu</span><span class="go">g<img src="../../../assets/image/o.png" /></span>
+      </h1>
+      <nav class="d-flex  justify-content-around  mt-2 pt-2 w-75">
+        <div class="menu_1 mt-2 pt-1" (click)="navigate('',false)">.Home</div>
+        <div class="menu_2 mt-2 pt-1" (click)="navigate('/blogs',false)">.Blogs</div>
+        <div class="menu_3 mt-2 pt-1" (click)="navigate('/service',false)">.Our Services</div>
+        <div class="menu_4 mt-2 pt-1" (click)="navigate('/market',false)">.Market Place</div>
+        <div class="menu_5 mt-2 pt-1" (click)="navigate('/about',false)">.About Us</div>
+        <div class="menu_5 mt-2 pt-1" (click)="navigate('/login',false)">.Try now</div>
+      </nav>
     </div>
   </div>
-  <div class="media-share">
-    <div class="md-1"><a href="#" class="fa fa-facebook"></a></div>
-    <div class="md-1"><a href="#" class="fa fa-twitter"></a></div>
-    <div class="md-1"><a href="#" class="fa fa-google"></a></div>
-    <div class="md-1"><a href="#" class="fa fa-youtube"></a></div>
+
+  <div class="row nav-mb" style="border: red 1px solid;">
+    <div class="col-md-12 d-flex flex-row  mb-3 justify-content-between">
+      <div class="p-2" style="border: green 1px dotted;">
+        <button (click)="toggleMenu(true)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+          </svg>
+        </button>
+      </div>
+      <div class="p-2" style="border: green 1px dotted;">
+        <span class="eu">Eu</span><span class="go">go</span>
+      </div>
+      <div class="menu_5 p-2" (click)="navigate('/login',false)">.Try now</div>
+    </div>
   </div>
-</div>
 
+</section>
 
-
-
-
-
+<!-- Full screen menu -->
 <div class="big-menu" *ngIf="bigMenuStatus === true">
   <div class="close" (click)="toggleMenu(false)">
     <div class="fa fa-close"></div>
@@ -31,7 +46,7 @@
     <div (click)="navigate('/service',false)">. Our Services</div>
     <div (click)="navigate('/market',false)">. Market Place</div>
     <div (click)="navigate('/about',false)">. About Us</div>
-    <div>Contact Us</div>
+    <div data-netlify-identity-button></div>
     <br />
     <br />
     <br />

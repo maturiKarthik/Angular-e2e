@@ -1,57 +1,69 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { UrlServiceService } from '../../service/url-service.service';
+import { Component, OnInit, Output } from "@angular/core";
+import { UrlServiceService } from "../../service/url-service.service";
+import {AuthService } from "../../service/Gotrue/auth.service";
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css'],
+  selector: "app-home-page",
+  templateUrl: "./home-page.component.html",
+  styleUrls: ["./home-page.component.css"],
 })
 export class HomePageComponent implements OnInit {
-  constructor(private urlService: UrlServiceService) {}
+  constructor(private urlService: UrlServiceService, private authservice: AuthService) {
+      authservice.login();
+  }
   @Output()
   universityLogo = [
-    ' ../../../assets/image/creteil.png',
-    '../../../assets/image/epita.svg',
-    '../../../assets/image/isc.jpeg',
-    '../../../assets/image/skema.png',
-    '../../../assets/image/italy1.png'
+    " ../../../assets/image/creteil.png",
+    "../../../assets/image/epita.svg",
+    "../../../assets/image/isc.jpeg",
+    "../../../assets/image/skema.png",
+    "../../../assets/image/italy1.png",
+    "../../../assets/image/uber.png",
+    "../../../assets/image/pizzahut.png",
+    "../../../assets/image/foddcherry.png",
+    "../../../assets/image/stuart.png",
   ];
+
+
 
   @Output()
   keypoints = [
     {
-      id: 1 ,
-      title: 'COLLECT & CROSS',
+      id: 1,
+      title: "COLLECT & CROSS",
       content:
-        'With supporting text below as a natural lead-in to additional content.',
+        "With supporting text below as a natural lead-in to additional content.",
       duration: 1200,
     },
     {
-      id: 2 ,
-      title: 'ANALYZE & VISUALIZE',
+      id: 2,
+      title: "ANALYZE & VISUALIZE",
       content:
-        'With supporting text below as a natural lead-in to additional content',
+        "With supporting text below as a natural lead-in to additional content",
       duration: 1300,
     },
     {
-      id: 3 ,
-      title: 'TAKE ACTION',
+      id: 3,
+      title: "TAKE ACTION",
       content:
-        'With supporting text below as a natural lead-in to additional content.',
+        "With supporting text below as a natural lead-in to additional content.",
       duration: 1400,
     },
     {
-      id: 4 ,
-      title: 'Transperent',
+      id: 4,
+      title: "Transperent",
       content:
-        'With supporting text below as a natural lead-in to additional content.',
+        "With supporting text below as a natural lead-in to additional content.",
       duration: 1500,
-    }
-
+    },
   ];
   ngOnInit() {}
 
   getUrlService() {
     return this.urlService;
   }
+
+  // netlifyObject
+
+
 }

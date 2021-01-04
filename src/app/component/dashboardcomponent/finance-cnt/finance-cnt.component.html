@@ -1,0 +1,73 @@
+<section>
+  <div class="conaitner">
+    <!-- Slider -->
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="d-flex justify-content-between">
+          <div>
+            Loan Amount: {{ this.numberWithCommas(this.loanamount) }} <i class="fa fa-inr" style="font-size:16px"></i>
+          </div>
+          <div class="form-group mt-2">
+            <input style="width: 150px;" type="range" class="form-control-range" id="formControlRange" min="500000"
+              max="3000000" [(ngModel)]="loanamount">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Loan Tenure -->
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="d-flex justify-content-between">
+          <div>
+            Tenure: {{ tenure }} Years
+          </div>
+          <div class="form-group">
+            <input style="width: 150px;" type="range" class="form-control-range" id="formControlRange" min="1" max="30"
+              [(ngModel)]="tenure">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="coantiner pt-3">
+    <div class="row">
+      <div class="col-sm-12 shadow p-3 mb-5 bg-white rounded">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Bank Name</th>
+              <th scope="col">IR(%)</th>
+              <th scope="col">Processing Fees</th>
+              <th scope="col">EMI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let bank of listofbanksource; let index = index;">
+              <th scope="row">{{index +1}}</th>
+              <td><img src="{{bank.image}}" class="img-fluid" alt="Responsive image" width="150" height="100"> </td>
+              <td>{{bank.ir}}</td>
+              <td>{{bank.fees}}</td>
+              <td>
+                <svg style="color:green;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-arrow-up" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
+                </svg> - {{calculateEmi(bank.max,this.tenure,this.loanamount)}} <i class="fa fa-rupee"></i>
+                <br />
+                <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-arrow-down" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
+                </svg> - {{calculateEmi(bank.min,this.tenure,this.loanamount)}} <i class="fa fa-rupee"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

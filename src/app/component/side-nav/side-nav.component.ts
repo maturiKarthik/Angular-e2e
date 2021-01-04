@@ -9,7 +9,9 @@ import { UrlServiceService } from '../../service/url-service.service';
 export class SideNavComponent implements OnInit {
   bigMenuStatus = false;
 
-  constructor(private urlService: UrlServiceService) {}
+  constructor(private urlService: UrlServiceService) {
+
+  }
 
   ngOnInit() {}
 

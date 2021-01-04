@@ -1,70 +1,68 @@
-.side-nav {
-  width: 100px;
-  height: 1300px;
-  background-color: #f7f7f7;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  border: 1px solid #595959;
+/* new design */
+.eu {
+  font-family: "Open Sans", sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 3.938rem);
+  font-weight: 600;
+  line-height: 67px;
+  color: #6b61f5;
 }
 
-.side-nav > .menu-ic {
-  text-align: center;
-  justify-content: center;
-  flex: 1;
+.go {
+  font-family: "Open Sans", sans-serif;
+  font-size: 53px;
+  font-weight: 300;
+  line-height: 34px;
+  color: #cb9f67;
 }
 
-.side-nav > .tag {
-  text-align: center;
-  justify-content: center;
-  flex: 10;
+.nav-mb {
+  visibility: hidden;
 }
 
-.side-nav > .tag > p {
-  margin: 3.8em;
-  writing-mode: vertical-rl;
-  margin-top: 125px;
-  font-size: 11px;
-  line-height: 13px;
-  font-family: "Poppins", sans-serif;
-  color: #595959;
-  transform: rotate(-180deg);
+.menu {
+  font-style: "Poppins, sans-serif";
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 80px;
+  color: rgb(29, 29, 29);
 }
 
-.side-nav > .menu-ic > img {
-  margin: 1em;
+.menu_1:hover,
+.menu_2:hover,
+.menu_3:hover,
+.menu_4:hover,
+.menu_5:hover,
+.menu_6:hover {
+  color: blue;
+  text-decoration: underline;
+}
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .nav-mb {
+    visibility: hidden;
+  }
 }
 
-.side-nav > .media-share {
-  text-align: center;
-  justify-content: center;
-  flex: 18;
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .nav-bg {
+    display: none;
+  }
+
+  .nav-mb {
+    visibility: visible;
+  }
+
+
 }
 
-.side-nav > .media-share > div {
-  display: block;
-  align-items: center;
-  margin: 1.5em;
+section {
+  padding: 20px;
+  cursor: pointer;
 }
 
-.share {
-  border: green 2px solid;
-  margin: 14em;
-  padding: 3px;
-  text-align: center;
-  justify-content: center;
-  font-size: 11px;
-  line-height: 13px;
-  font-family: "Poppins", sans-serif;
-  color: #595959;
-  writing-mode: vertical-rl;
-  transform: rotate(-180deg);
-}
+/* EOF new design */
+
 /** Big Menu Display **/
 
 .big-menu {
@@ -170,3 +168,5 @@
     opacity: 0.98;
   }
 }
+
+/** Test **/

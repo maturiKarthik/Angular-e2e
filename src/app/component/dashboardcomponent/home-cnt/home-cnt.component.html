@@ -1,0 +1,134 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <form>
+          <div style="width: 50%;">
+            <input class="form-control" matInput placeholder="Master in .." aria-label="Msater in .."
+              [matAutocomplete]="auto" [formControl]="stateCtrl">
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let discipline of filteredDicipline | async" [value]="discipline.name">
+                <img class="example-option-img" aria-hidden height="25">
+                <span>{{discipline.name}}</span>
+              </mat-option>
+            </mat-autocomplete>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row shadow p-3 mb-5 bg-white rounded">
+      <div class="col-sm-6 p-3 mt-2">
+        <table class="table table-borderless mt-3">
+
+          <tbody>
+            <tr>
+              <td>Tranport</td>
+              <td>35 &euro; - 75 &euro;</td>
+            </tr>
+            <tr>
+              <td>Food Expenses</td>
+              <td>60 &euro; - 100 &euro;</td>
+            </tr>
+            <tr>
+              <td>House Rent</td>
+              <td>250 &euro;- 650 &euro;<br /><sub>(colocation)</sub> </td>
+            </tr>
+            <tr>
+              <td>Other Utilities<br /><sub>(Sports,bars,..etc)</sub></td>
+              <td> 100 &euro; - 300 &euro;<br /><sub>(Depends on your expenditure)</sub></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-sm-6">
+        <app-sparkline></app-sparkline>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <!-- row1 -->
+  <div class="container">
+    <div class="row">
+      <!-- Apex Bar colum chart -->
+      <div class="col-sm-6">
+        <div id="chart" style="background-color: #F6F8FA;">
+          <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [dataLabels]="chartOptions.dataLabels"
+            [plotOptions]="chartOptions.plotOptions" [yaxis]="chartOptions.yaxis" [xaxis]="chartOptions.xaxis"
+            [fill]="chartOptions.fill" [title]="chartOptions.title"></apx-chart>
+        </div>
+      </div>
+
+      <!-- Apex Radar chart -->
+      <div class="col-sm-6">
+        <div id="radarchart" style="background-color: #F6F8FA;">
+          <apx-chart [series]="radarchartOptions.series" [chart]="radarchartOptions.chart"
+            [xaxis]="radarchartOptions.xaxis" [title]="radarchartOptions.title"></apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--row3 -->
+  <div class="container pt-3 mt-4">
+    <div class="row text-center">
+      <div class="col-sm-12">
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource">
+
+            <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+            <!-- Rank Column -->
+            <ng-container matColumnDef="rank">
+              <th mat-header-cell *matHeaderCellDef class="text-center"> World Rank. </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank}} </td>
+            </ng-container>
+
+            <!-- Status Column -->
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef class="text-center"> Status </th>
+              <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef class="text-center"> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <!-- Country Column -->
+            <ng-container matColumnDef="country">
+              <th mat-header-cell *matHeaderCellDef class="text-center"> Country </th>
+              <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+            </ng-container>
+
+            <!-- Fees Column -->
+            <ng-container matColumnDef="fee">
+              <th mat-header-cell *matHeaderCellDef class="text-center"> Fees </th>
+              <td mat-cell *matCellDef="let element"> {{element.fees}} </td>
+            </ng-container>
+
+            <!-- courses Column -->
+            <ng-container matColumnDef="courses">
+              <th mat-header-cell *matHeaderCellDef class="text-center"> courses </th>
+              <td mat-cell *matCellDef="let element" ng-repeat="course in element.courses | filter:course:data">
+                {{element.courses}}</td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

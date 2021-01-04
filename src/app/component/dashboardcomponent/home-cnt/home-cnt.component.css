@@ -1,0 +1,25 @@
+/* Structure */
+section{
+  padding-top: 30px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+/** Apex Bar Colum chart **/
+#chart {
+  max-width: 650px;
+  margin: 35px auto;
+}
+/** Apex Radar chart **/
+#radarchart {
+  max-width: 450px;
+  margin: 35px auto;
+}
