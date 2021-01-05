@@ -1,7 +1,8 @@
 /* new design */
+
 .eu {
   font-family: "Open Sans", sans-serif;
-  font-size: clamp(1.5rem, 2.5vw, 3.938rem);
+  font-size: clamp(2vh, 2.5vw, 5vh);
   font-weight: 600;
   line-height: 67px;
   color: #6b61f5;
@@ -10,9 +11,15 @@
 .go {
   font-family: "Open Sans", sans-serif;
   font-size: 53px;
+  font-size: clamp(2vh, 2.5vw, 5vh);
   font-weight: 300;
   line-height: 34px;
   color: #cb9f67;
+}
+
+.logo {
+  font-size: 33px;
+  font-size: clamp(1vh, 2vw, 4vh);
 }
 
 .nav-mb {
@@ -20,23 +27,25 @@
 }
 
 .menu {
-  font-style: "Poppins, sans-serif";
+  font-family: "Poppins, sans-serif";
   font-size: 13px;
   font-weight: 600;
-  line-height: 80px;
+  line-height: 30px;
   color: rgb(29, 29, 29);
 }
 
-.menu_1:hover,
-.menu_2:hover,
-.menu_3:hover,
-.menu_4:hover,
-.menu_5:hover,
-.menu_6:hover {
+.menu_1:hover, .menu_2:hover, .menu_3:hover, .menu_4:hover, .menu_5:hover, .menu_6:hover {
   color: blue;
   text-decoration: underline;
 }
+
+.menu-bt{
+  width: clamp(1vh,2vw,3vh);
+  height: clamp(1.5vh,2.5vw,5vh);
+}
+
 /* Large devices (desktops, less than 1200px) */
+
 @media (max-width: 1199.98px) {
   .nav-mb {
     visibility: hidden;
@@ -44,16 +53,14 @@
 }
 
 /* Medium devices (tablets, less than 992px) */
+
 @media (max-width: 991.98px) {
   .nav-bg {
     display: none;
   }
-
   .nav-mb {
     visibility: visible;
   }
-
-
 }
 
 section {
@@ -90,23 +97,24 @@ section {
   color: white;
 }
 
-.big-menu > .close:hover {
+.big-menu>.close:hover {
   color: #9a9a9c;
 }
-.big-menu > .cnt {
+
+.big-menu>.cnt {
   position: relative;
   top: 5em;
 }
 
-.big-menu > .cnt > div {
+.big-menu>.cnt>div {
   margin: 5px;
 }
 
-.big-menu > .cnt > div:hover {
+.big-menu>.cnt>div:hover {
   color: rgb(172, 172, 228);
 }
 
-.big-menu > .cnt > .tag {
+.big-menu>.cnt>.tag {
   display: block;
   font-size: 14px;
   line-height: 24px;
@@ -116,6 +124,7 @@ section {
 .app-bar {
   display: none;
 }
+
 /** EOF Big Menu **/
 
 @media screen and (max-width: 1024px) {
@@ -130,11 +139,10 @@ section {
   .menu-ic {
     flex: 1;
   }
-  .side-nav > .tag {
+  .side-nav>.tag {
     flex: 100;
   }
-
-  .side-nav > .tag > p {
+  .side-nav>.tag>p {
     margin-top: 13px;
     writing-mode: horizontal-tb;
     font-size: 10px;
@@ -146,9 +154,7 @@ section {
   .media-share {
     display: none;
   }
-
   /** Big menu **/
-
   .big-menu {
     cursor: pointer;
     padding-left: 54px;

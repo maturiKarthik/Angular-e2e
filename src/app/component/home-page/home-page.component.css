@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
+/** Mobile View **/
+
+
 section {
   padding: 60px 0;
   overflow: hidden;
@@ -17,25 +20,9 @@ section {
   background-repeat: no-repeat;
 }
 
-.eu {
-  font-family: "Open Sans", sans-serif;
-  font-size: 63px;
-  font-weight: 600;
-  line-height: 67px;
-  color: #6b61f5;
-}
-
-.go {
-  font-family: "Open Sans", sans-serif;
-  font-size: 53px;
-  font-weight: 300;
-  line-height: 34px;
-  color: #cb9f67;
-}
-
 .eu-sub {
   font-style: "Poppins, Roboto";
-  font-size: 60px;
+  font-size: clamp(3.8vh,5.5vw,10vh); 
   font-weight: 600;
   line-height: 63px;
   color: #f48c06;
@@ -193,3 +180,5 @@ section {
   -webkit-transform: scale(1.5); /* Safari 3-8 */
   transform: scale(1.5);
 }
+
+
